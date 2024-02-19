@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/', [HomeController::class, 'Homepage']);
+// Route::get('/by-category', [CategoryController::class, 'Homepage']);
+
+
+Route::get('/category-list', [CategoryController::class, 'CategoryList']);
+
+
+Route::get('/brand-list', [BrandController::class, 'BrandList']);

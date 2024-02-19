@@ -7,8 +7,8 @@ use Illuminate\Http\JsonResponse;
 
 class ResponseHelper
 {
-    public static function Out($msg, $data, $code): JsonResponse
+    public static function Out($version, $msg, $method,  $data, $code): JsonResponse
     {
-        return response()->json(['message' => $msg, 'data' => $data], $code);
+        return response()->json([ 'version'=> $version , 'message' => $msg, 'method' => $method, 'data' => $data], $code);
     }
 }
